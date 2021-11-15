@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta charset="utf-8"/>
+	<title>Sklep z książkami</title>
+</h:head>
+<h:body style="background-color: #feb; margin: 0.5em;">
+
+
+	<p:messages />
+
+<h:form id="form">
+    <div class="card crud-demo">
+        <p:growl id="messages" showDetail="true"/>
+
+       
+        <p:dataTable value = "#{bookListBB.list}" var="p" 
+                     reflow="true" styleClass="products-table"
+                     paginator="true"
+                     rows="10" rowSelectMode="add" paginatorPosition="bottom">>
+
+         
+
+            <p:column headerText="ID" >
+                <h:outputText value="#{p.bookid}"/>
+            </p:column>
+            
+            <p:column headerText="Nazwa">
+                <h:outputText value="#{p.bookName}"/>
+            </p:column>
+            
+            <p:column headerText="Zdjęcie" exportable="false">
+                <p:graphicImage value="#{p.image}" library="demo" width="80"
+                                styleClass="product-image"/>
+            </p:column>
+            
+            
+            <p:column headerText="Gatunek">
+                <h:outputText value="#{p.genre}"/>
+            </p:column>
+            
+            <p:column headerText="Ilość" 
+                      >
+                <h:outputText styleClass="product-badge status-#{product.inventoryStatus.name().toLowerCase()}" value="#{p.quantity}"/>
+            </p:column>
+            
+            <p:column headerText="Okładka">
+                <h:outputText value="#{p.cover}"/>
+            </p:column>
+            <p:column headerText="Wydawca">
+                <h:outputText value="#{p.publisher}"/>
+            </p:column>
+            <p:column headerText="Data wydania">
+                <h:outputText value="#{p.releaseDate}"/>
+            </p:column>
+        
+            
+            <p:column exportable="false">
+                
+                <p:commandButton class="ui-button-warning rounded-button" icon="pi pi-trash" process="@this">
+                             
+                    <f:setPropertyActionListener value="#{product}" target="#{crudView.selectedProduct}"/>
+                </p:commandButton>
+            </p:column>
+
+        </p:dataTable>
+        
+
+        
+    </div>
+</h:form>
+
+</h:body>
+</html>

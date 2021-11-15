@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+>
+
+	<h:head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+		<title>Książkarnia</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet"/>
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="#{resource['template:css/bootstrap.min.css']}"/>
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="#{resource['template:css/slick.css']}"/>
+		<link type="text/css" rel="stylesheet" href="#{resource['template:css/slick-theme.css']}"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="#{resource['template:css/nouislider.min.css']}"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="#{resource['template:css/font-awesome.min.css']}"/>
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"/>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="#{resource['template:css/style.css']}"/>
+
+
+    </h:head>
+	<h:body>
+		
+	<ui:insert name="header1">	
+			<ui:include src="/templates/header-snippet.xhtml"/>
+	</ui:insert>
+	
+	<ui:insert name="navigation1">
+		<div>
+			<ui:include src="/templates/navigation-snippet.xhtml"/>
+		</div>
+	</ui:insert>
+
+
+		
+		<ui:insert name="content">
+		</ui:insert>
+		
+
+		<ui:insert name="news1">	
+				<div id="news1">
+			<ui:include src="/templates/newsletter-snippet.xhtml"/>
+				</div>
+		</ui:insert>
+
+		<ui:insert name="footer2">	
+				<div id="footer2">
+			<ui:include src="/templates/footer-snippet.xhtml"/>
+				</div>
+		</ui:insert>
+
+
+		<!-- jQuery Plugins -->
+		<script src="#{resource['template:js/jquery.min.js']}"></script>
+		<script src="#{resource['template:js/bootstrap.min.js']}"></script>
+		<script src="#{resource['template:js/slick.min.js']}"></script>
+		<script src="#{resource['template:js/nouislider.min.js']}"></script>
+		<script src="#{resource['template:js/jquery.zoom.min.js']}"></script>
+		<script src="#{resource['template:js/main.js']}"></script>
+
+	</h:body>
+</html>

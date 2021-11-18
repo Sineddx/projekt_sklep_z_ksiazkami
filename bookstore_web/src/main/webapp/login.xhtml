@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	>
+
+
+	<ui:composition template="/templates/page-template.xhtml">
+
+		<ui:define name="pageContent">
+		
+				<div class="col text-center supportclass">
+					<div class="section_title new_arrivals_title">
+						<h2>Logowanie</h2>
+					</div>
+				</div>
+
+				<div class="container supportclass2">
+					<div class="card align-items-center">	
+						<h:form>
+							<div class="p-field p-grid">
+    							<label for="firstname" class="p-col-fixed supportclass2" style="width:100px">Email</label>
+    								<div class="p-col">
+        								<p:inputText id="firstname" type="text" />
+    								</div>
+							</div>
+
+							<div class="p-field p-grid">
+    							<label for="password" class="p-col-fixed" style="width:100px">Hasło</label>
+    								<div class="p-col">
+        								<p:inputText id="password" type="text" />
+    								</div>
+							</div>
+		
+						<h:commandButton value="Zaloguj"  class="newsletter_submit_btn sc4"  /> lub <a class="cl" href="register.xhtml">Zarejestruj się!</a><br></br>
+						<a class="cl" href="recovery.xhtml">Zapomniałeś hasła?</a>
+	
+				   </h:form>
+
+				  </div>
+			</div>
+		</ui:define>
+
+	</ui:composition>
+
+</html>

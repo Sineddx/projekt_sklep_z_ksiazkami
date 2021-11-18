@@ -1,8 +1,14 @@
 package bookstore.dao;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import com.jsf.entities.Person;
+
 import bookstore.entities.User;
 
 @Stateless
@@ -28,5 +34,24 @@ public class UserDAO {
 		return em.find(User.class, uid);
 	}
 	
+	public Boolean getUser(String email) {
+		Object answer = null;
+		Query query = em.createQuery("select p from User p where p.email = :email");
+		
+		query.setParameter("email", email);
+		
+		try {
+			answer = (Object)query.getSingleResult();
+		}catch(Exception e) {
+			
+		}
+		if(answer==null) {
+			System.out.println(answer);
+			return true;
+		}else {
+			return false;
+		}
+	}
+
 	
 }

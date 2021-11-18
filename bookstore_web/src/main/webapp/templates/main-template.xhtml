@@ -1,78 +1,74 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  xmlns:h="http://xmlns.jcp.org/jsf/html"
->
+	  xmlns:p="http://primefaces.org/ui">
+<h:head>
+<title>Księgarnia - PełnyRegał</title>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="description" content="Colo Shop Template"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" type="text/css" href="#{resource['template:css/bootstrap4/bootstrap.min.css']}"/>
+<link rel="stylesheet" type="text/css" href="#{resource['template:plugins/OwlCarousel2-2.2.1/owl.carousel.css']}"/>
+<link rel="stylesheet" type="text/css" href="#{resource['template:plugins/OwlCarousel2-2.2.1/owl.theme.default.css']}"/>
+<link rel="stylesheet" type="text/css" href="#{resource['template:plugins/OwlCarousel2-2.2.1/animate.css']}"/>
+<link rel="stylesheet" type="text/css" href="#{resource['template:css/main_styles.css']}"/>
+<link rel="stylesheet" type="text/css" href="#{resource['template:css/responsive.css']}"/>
 
-	<h:head>
-		<meta charset="utf-8"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+ <link type="text/css" rel="stylesheet" href="#{resource['template:css/main_styles.css']}"/>
+ <link type="text/css" rel="stylesheet" href="#{resource['template:css/responsive.css']}"/>
+ <script
+      src="https://kit.fontawesome.com/dfa1976692.js"
+      crossorigin="anonymous"
+    ></script>
+</h:head>
 
-		<title>Książkarnia</title>
+<h:body>
 
-		<!-- Google font -->
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet"/>
+<div class="super_container">
+<!-- Header -->
 
-		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="#{resource['template:css/bootstrap.min.css']}"/>
-
-		<!-- Slick -->
-		<link type="text/css" rel="stylesheet" href="#{resource['template:css/slick.css']}"/>
-		<link type="text/css" rel="stylesheet" href="#{resource['template:css/slick-theme.css']}"/>
-
-		<!-- nouislider -->
-		<link type="text/css" rel="stylesheet" href="#{resource['template:css/nouislider.min.css']}"/>
-
-		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="#{resource['template:css/font-awesome.min.css']}"/>
-		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"/>
-		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
-
-		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="#{resource['template:css/style.css']}"/>
-
-
-    </h:head>
-	<h:body>
-		
-	<ui:insert name="header1">	
+	<header class="header trans_300">
+		<ui:insert name="header1">	
 			<ui:include src="/templates/header-snippet.xhtml"/>
-	</ui:insert>
+		</ui:insert>
 	
-	<ui:insert name="navigation1">
-		<div>
+		<ui:insert name="navigation1">
 			<ui:include src="/templates/navigation-snippet.xhtml"/>
-		</div>
-	</ui:insert>
+		</ui:insert>
+	</header>
+	
+<!--Menu-->
+		<ui:insert name="menu1">
+			<ui:include src="/templates/menu-snippet.xhtml"/>
+		</ui:insert>
+	
 
-
-		
+<!--Content-->
 		<ui:insert name="content">
 		</ui:insert>
 		
 
 		<ui:insert name="news1">	
-				<div id="news1">
 			<ui:include src="/templates/newsletter-snippet.xhtml"/>
-				</div>
 		</ui:insert>
-
-		<ui:insert name="footer2">	
-				<div id="footer2">
-			<ui:include src="/templates/footer-snippet.xhtml"/>
-				</div>
+	
+		<ui:insert name="footer2">					
+			<ui:include src="/templates/footer-snippet.xhtml"/>				
 		</ui:insert>
+	
+</div>
 
+<script src="#{resource['template:js/jquery-3.2.1.min.js']}"></script>
+<script src="#{resource['template:styles/bootstrap4/popper.js']}"></script>
+<script src="#{resource['template:styles/bootstrap4/bootstrap.min.js']}"></script>
+<script src="#{resource['template:plugins/Isotope/isotope.pkgd.min.js']}"></script>
+<script src="#{resource['template:plugins/OwlCarousel2-2.2.1/owl.carousel.js']}"></script>
+<script src="#{resource['template:plugins/easing/easing.js']}"></script>
+<script src="#{resource['template:js/custom.js']}"></script>
+</h:body>
 
-		<!-- jQuery Plugins -->
-		<script src="#{resource['template:js/jquery.min.js']}"></script>
-		<script src="#{resource['template:js/bootstrap.min.js']}"></script>
-		<script src="#{resource['template:js/slick.min.js']}"></script>
-		<script src="#{resource['template:js/nouislider.min.js']}"></script>
-		<script src="#{resource['template:js/jquery.zoom.min.js']}"></script>
-		<script src="#{resource['template:js/main.js']}"></script>
-
-	</h:body>
 </html>

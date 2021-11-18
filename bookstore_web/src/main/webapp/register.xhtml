@@ -1,63 +1,74 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	>
 
 
-<ui:composition template="/templates/page-template.xhtml">
+	<ui:composition template="/templates/page-template.xhtml">
 
-	<ui:define name="pageContent">
-<br></br>
-<br></br>
+		<ui:define name="pageContent">
+				<div class="col text-center supportclass">
+					<div class="section_title new_arrivals_title">
+						<h2>Rejestracja nowego konta</h2>
+					</div>
+				</div>
+				
+			<div class="container supportclass2">
+				<div class="card align-items-center">
+					<h:form rendered="#{userRegisterBB.user !=null}">
+						<div class="p-field p-grid">
+    						<label for="name" class="p-col-fixed supportclass2" style="width:100px">Imię</label>
+    							<div class="p-col">
+        							<p:inputText id="name" type="text" value="#{userRegisterBB.user.name}" required="true" />
+    							</div>
+						</div>
+						
+						<div class="p-field p-grid">
+    						<label for="surname" class="p-col-fixed" style="width:100px">Nazwisko</label>
+    							<div class="p-col">
+        							<p:inputText id="surname" type="text" value="#{userRegisterBB.user.surname}" required="true" />
+    							</div>
+						</div>
+						
+						<div class="p-field p-grid">
+    						<label for="email" class="p-col-fixed" style="width:100px">Email</label>
+    							<div class="p-col">
+        							<p:inputText id="email" type="text"  value="#{userRegisterBB.user.email}"
+        							required="true"
+        							requiredMessage="Uzupełnij mail!"/>
+        							<p:message for="email"/>
+    							</div>
+						</div>
+						
+						<div class="p-field p-grid">
+    						<label for="password" class="p-col-fixed" style="width:100px">Hasło</label>
+    							<div class="p-col">
+        							<p:inputText id="password" type="password" value="#{userRegisterBB.user.password}" required="true" />
+    							</div>
+						</div>
+						
+						<div class="p-field p-grid">
+    						<label for="repassword" class="p-col-fixed" style="width:100px">Powtórz hasło</label>
+    							<div class="p-col">
+        							<p:inputText id="repassword" type="password" class="sc5" value="#{userRegisterBB.repwd}" required="true"/>
+    							</div>
+						</div>	
+						
+						<p:selectBooleanCheckbox  itemLabel="Akceptuję regulamin" required="true"/><br></br>
+						
+                		<h:commandButton value="Zarejestruj"  class="newsletter_submit_btn sc4" action="#{userRegisterBB.saveUser()}" />
+						
+    				</h:form>
+				</div>	
+			</div>
 
-<div class="helpclass">
-	<p:panel header="Rejestracja nowego konta" style="width:30%">
-		<h:form>
-			<p:panelGrid 
-				 id="grid" 
-			     columns="1" 
-                 layout="grid"
-                 styleClass="ui-panelgrid-blank ui-fluid"
-                 style="border:0px none; background-color:transparent;"
-        	> 
-		
-			<label class="label">Imię</label>
-			<input class="input" id="name" required="true" value=""/>
-			
-			<label class="label">Nazwisko</label>
-			<input class="input" id="surname" required="true" value=""/>
-			
-			<label class="label">Email</label>
-			<input class="input" id="email" required="true" value=""/>
-			
-			<label class="label">Hasło</label>
-			<input class="input" id="passwd" required="true" value=""/>
-			
-			<label class="label">Powtórz hasło</label>
-			<input class="input" id="repasswd" required="true" value=""/>
-			
+		</ui:define>
 
-			
-			</p:panelGrid>
-				<p:messages id="msg" style="width: 340px"/>
-						<p:selectManyCheckbox id="confirms" value="#{checkboxView.selectedOptions}">		
-            				<f:selectItem itemLabel="Akceptuję regulamin serwisu" itemValue="reg" required="true"/>
-            				<f:selectItem itemLabel="Zgadzam się na newsletter" itemValue="news"/>           		
-        				</p:selectManyCheckbox>
-        				<br></br>
-        	<p:commandButton value="Zarejestruj" styleClass="rounded-button ui-button-danger" update="grid"/>
-		</h:form>    
-	</p:panel>  
-</div>
-
-
-	</ui:define>
-	
-</ui:composition>
+	</ui:composition>
 
 
 </html>
